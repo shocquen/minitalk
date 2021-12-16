@@ -6,7 +6,7 @@
 #    By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 16:29:45 by shocquen          #+#    #+#              #
-#    Updated: 2021/12/16 19:04:51 by shocquen         ###   ########.fr        #
+#    Updated: 2021/12/16 19:14:43 by shocquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,9 @@ all :		$(CLIT) $(SERV)
 			$(CC) $(CFLAG) -I $(INC) -c $< -o $@
 
 $(CLIT) :	$(OBJ_CLIT) $(INC)
-			$(CC) $(CLIT) $(OBJ_CLIT) $(LIB) -g3
+			$(CC) $(CLIT) $(OBJ_CLIT) $(LIB)
 $(SERV) : $(OBJ_SERV) $(INC)
-			$(CC) $(SERV) $(OBJ_SERV) $(LIB) -g3
+			$(CC) $(SERV) $(OBJ_SERV) $(LIB)
 
 clean :
 			$(RM) $(OBJ_SERV) $(OBJ_CLIT)
