@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:13:15 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/16 17:56:28 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/16 18:23:56 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_is_all_digit(char *str)
 
 static int	ft_error(void)
 {
-	ft_print_err("client: unable to send the signal to the server\n");
+	ft_print_err("The signal cannot be sent to the server\n");
 	exit (0);
 }
 

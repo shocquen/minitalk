@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:04:38 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/16 17:43:30 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/16 19:01:38 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 
 static void get_chr(int sig)
 {
-	static int	size = 8;
+	static int	size = 7;
 	static char	chr = 0x00;
 
-	while (--size < 0)
+	if (sig == SIGUSR1)
+		chr += (1 << size--);
+	else if (sig == SIGUSR2)
+		size--;
+	if (size < 0)
 	{
-		if (sig == SIGUSR1)
-			chr += (1 << size);
+		ft_printf("%c", chr);
+		if (!chr)
+			ft_printf("\n");
+		size = 7;
+		chr = 0x00;
 	}
-	ft_printf("%c", chr);
-	size = 8;
-	chr = 0x00;
 }
 
 int	main(void)

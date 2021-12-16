@@ -6,7 +6,7 @@
 #    By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 16:29:45 by shocquen          #+#    #+#              #
-#    Updated: 2021/12/16 17:29:08 by shocquen         ###   ########.fr        #
+#    Updated: 2021/12/16 19:04:51 by shocquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ clean :
 			$(RM) $(OBJ_SERV) $(OBJ_CLIT)
 
 fclean :	clean
-			$(RM) $(NAME)
+			$(RM) $(CLIT) $(SERV)
 
 re : 		fclean all
 
