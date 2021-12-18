@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 10:43:04 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/09 12:03:20 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/18 12:36:05 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ typedef struct s_handler {
 }	t_handler;
 
 void	ft_putnbr_base(size_t nbr, const char *base);
-void	ft_putchar(char c);
-int		ft_putnbr(int nb);
 int		ft_lennb(int nb);
 int		ft_lennb_unsigned(unsigned long long int nb, int base);
-int		ft_strlen(const char *s);
-int		ft_putstr(char *s);
 int		ft_print_c(va_list args);
 int		ft_print_s(va_list args);
 int		ft_print_p(va_list args);

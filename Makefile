@@ -6,7 +6,7 @@
 #    By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 16:29:45 by shocquen          #+#    #+#              #
-#    Updated: 2021/12/16 19:14:43 by shocquen         ###   ########.fr        #
+#    Updated: 2021/12/18 16:49:42 by shocquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS_CLIT =	srcs/client.c \
 
 SRCS_SERV = srcs/server.c
 
-LIB = lib/libftprintf.a
+LIB_ARM =	lib/arm/libft.a
+LIB_86 = lib/86/libft.a
 
 INC =		includes
 	
@@ -28,15 +29,23 @@ OBJ_CLIT =		$(SRCS_CLIT:.c=.o)
 OBJ_SERV =		$(SRCS_SERV:.c=.o)
 CFLAG =	-Wall -Wextra -Werror
 
+proc =	$(shell uname -m )
+ifeq ($(proc),arm64)
+	LIB =	$(LIB_ARM)
+else
+	LIB = $(LIB_86)
+endif
+
 all :		$(CLIT) $(SERV)
 	@echo "server and client made"
+	@echo "Machine hardware name: "$(proc)
 
 %.o : %.c
 			$(CC) $(CFLAG) -I $(INC) -c $< -o $@
 
-$(CLIT) :	$(OBJ_CLIT) $(INC)
+$(CLIT) :	$(OBJ_CLIT)
 			$(CC) $(CLIT) $(OBJ_CLIT) $(LIB)
-$(SERV) : $(OBJ_SERV) $(INC)
+$(SERV) : $(OBJ_SERV)
 			$(CC) $(SERV) $(OBJ_SERV) $(LIB)
 
 clean :

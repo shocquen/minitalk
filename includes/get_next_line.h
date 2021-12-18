@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 12:06:51 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/18 16:54:36 by shocquen         ###   ########.fr       */
+/*   Created: 2021/11/30 12:23:30 by shocquen          #+#    #+#             */
+/*   Updated: 2021/12/18 16:00:03 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-#	define MINITALK_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# define MAX_PID 4194304
+# include <unistd.h>
+# include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-# include <signal.h>
-# include <sys/signal.h>
-# include <stddef.h>
-
-void	post_msg(int pid, char *msg);
-int64_t	ft_long_atoi(const char *str);
-int		ft_isdigit(int c);
-char	*ft_itoa(int n);
+int		ft_gnl_strchr(const char *str, char c);
+char	*get_next_line(int fd);
+char	*ft_gnl_strjoin(char *s1, char const *s2);
 
 #endif
