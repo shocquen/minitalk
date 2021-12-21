@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:13:15 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/18 17:01:09 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/21 14:35:01 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ int	main(int argc, char **argv)
 		exit (0);
 	}
 	else
-		{
-			post_msg(ft_atoi(argv[1]), argv[2]);
-			post_msg(ft_atoi(argv[1]), ft_itoa((int)getpid()));
-			while (1)
-				pause();
-		}
-
+		post_msg(ft_atoi(argv[1]), argv[2]);
 	return (0);
 }

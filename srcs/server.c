@@ -6,17 +6,12 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:04:38 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/18 16:58:12 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/21 14:38:57 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 #include "libft.h"
-
-static void akn(int pid)
-{
-	ft_printf("\nclient pid: %d\n", pid);
-}
 
 static void get_chr(int sig)
 {
@@ -31,7 +26,7 @@ static void get_chr(int sig)
 	{
 		ft_printf("%c", chr);
 		if (!chr)
-			akn(ft_atoi("123"));
+			ft_printf("\n");
 		size = 7;
 		chr = 0x00;
 	}

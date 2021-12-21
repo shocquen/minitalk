@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:30:15 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/18 16:54:11 by shocquen         ###   ########.fr       */
+/*   Updated: 2021/12/21 14:38:05 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	post_msg(int pid, char *msg)
 		}
 		i++;
 	}
+	ft_printf("Message sent!\n");
 }
 
 int64_t 	ft_long_atoi(const char *str)
@@ -82,32 +83,4 @@ static size_t	intlen(int n)
 		++count;
 	}
 	return (count);
-}
-
-char	*ft_itoa(int n)
-{
-	size_t			len;
-	size_t			n_tmp;
-	char			*str;
-
-	if (n < 0)
-		n_tmp = -(unsigned int)n;
-	else
-		n_tmp = n;
-	if (n < 0)
-		len = intlen(n_tmp) + 1;
-	else
-		len = intlen(n_tmp);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	while (len--)
-	{
-		str[len] = n_tmp % 10 + '0';
-		n_tmp /= 10;
-	}
-	if (n < 0)
-		str[0] = '-';
-	return (str);
 }
