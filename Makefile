@@ -6,7 +6,7 @@
 #    By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 16:29:45 by shocquen          #+#    #+#              #
-#    Updated: 2021/12/18 16:49:42 by shocquen         ###   ########.fr        #
+#    Updated: 2022/01/03 10:27:42 by shocquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ OBJ_CLIT =		$(SRCS_CLIT:.c=.o)
 OBJ_SERV =		$(SRCS_SERV:.c=.o)
 CFLAG =	-Wall -Wextra -Werror
 
+# Compile the right libft.a
 proc =	$(shell uname -m )
 ifeq ($(proc),arm64)
 	LIB =	$(LIB_ARM)
@@ -37,16 +38,18 @@ else
 endif
 
 all :		$(CLIT) $(SERV)
-	@echo "server and client made"
 	@echo "Machine hardware name: "$(proc)
 
 %.o : %.c
 			$(CC) $(CFLAG) -I $(INC) -c $< -o $@
 
 $(CLIT) :	$(OBJ_CLIT)
-			$(CC) $(CLIT) $(OBJ_CLIT) $(LIB)
+	$(CC) $(CLIT) $(OBJ_CLIT) $(LIB)
+	@echo "Client made."
+
 $(SERV) : $(OBJ_SERV)
-			$(CC) $(SERV) $(OBJ_SERV) $(LIB)
+	$(CC) $(SERV) $(OBJ_SERV) $(LIB)
+	@echo "Server made."
 
 clean :
 			$(RM) $(OBJ_SERV) $(OBJ_CLIT)
