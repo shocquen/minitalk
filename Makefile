@@ -6,10 +6,14 @@
 #    By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 16:29:45 by shocquen          #+#    #+#              #
-#    Updated: 2022/01/03 10:27:42 by shocquen         ###   ########.fr        #
+#    Updated: 2022/01/03 11:05:48 by shocquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Colors
+RED=\033[0;31m
+GRN=\033[1;32m
+NC=\033[0m # No Color
 
 CC =		gcc -o
 CLIT =		client
@@ -37,19 +41,18 @@ else
 	LIB = $(LIB_86)
 endif
 
-all :		$(CLIT) $(SERV)
-	@echo "Machine hardware name: "$(proc)
+all :	$(CLIT) $(SERV)
 
 %.o : %.c
 			$(CC) $(CFLAG) -I $(INC) -c $< -o $@
 
 $(CLIT) :	$(OBJ_CLIT)
 	$(CC) $(CLIT) $(OBJ_CLIT) $(LIB)
-	@echo "Client made."
+	@echo "${GRN}Client made.${NC}"
 
 $(SERV) : $(OBJ_SERV)
 	$(CC) $(SERV) $(OBJ_SERV) $(LIB)
-	@echo "Server made."
+	@echo "${GRN}Server made.${NC}"
 
 clean :
 			$(RM) $(OBJ_SERV) $(OBJ_CLIT)
@@ -58,5 +61,8 @@ fclean :	clean
 			$(RM) $(CLIT) $(SERV)
 
 re : 		fclean all
+
+bonus : all
+	@echo "${GRN}Bonuses dones.${NC}"
 
 .PHONY : 	all clean fclean re
