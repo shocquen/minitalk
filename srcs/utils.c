@@ -6,7 +6,7 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:30:15 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/21 14:38:05 by shocquen         ###   ########.fr       */
+/*   Updated: 2022/01/03 10:43:26 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	post_msg(int pid, char *msg)
 	ft_printf("Message sent!\n");
 }
 
-int64_t 	ft_long_atoi(const char *str)
+int64_t	ft_long_atoi(const char *str)
 {
 	int64_t	nb;
-	int				sign;
+	int		sign;
 
 	sign = 1;
 	while (*str && ((*str >= '\t' && *str <= '\r') || (*str == ' ')))

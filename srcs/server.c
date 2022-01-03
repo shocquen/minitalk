@@ -6,14 +6,14 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:04:38 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/21 14:38:57 by shocquen         ###   ########.fr       */
+/*   Updated: 2022/01/03 10:43:08 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 #include "libft.h"
 
-static void get_chr(int sig)
+static void	get_chr(int sig)
 {
 	static int	size = 7;
 	static char	chr = 0x00;

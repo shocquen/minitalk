@@ -6,12 +6,12 @@
 /*   By: shocquen <shocquen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:06:51 by shocquen          #+#    #+#             */
-/*   Updated: 2021/12/18 16:54:36 by shocquen         ###   ########.fr       */
+/*   Updated: 2022/01/03 10:40:41 by shocquen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
-#	define MINITALK_H
+# define MINITALK_H
 
 # define MAX_PID 4194304
 
